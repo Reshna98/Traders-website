@@ -15,6 +15,8 @@ def stock2(request):
     return render(request,'stock2.html')
 def exchange(request):
     return render(request,'exchange.html')
+def exchange2(request):
+    return render(request,'exchange2.html')
 def blog(request):
     return render(request,'blog.html')
 def blog2(request):

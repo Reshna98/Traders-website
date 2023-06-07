@@ -2,6 +2,15 @@
 <html lang="en">
 <head>
   <style>
+
+
+
+.card-content {
+  text-align: center;
+}
+
+
+
     .foot{
       background-color: rgb(1, 1, 83); 
     }
@@ -10,7 +19,15 @@
    }
   .card{
     margin-top: 10px;
+  
   }
+  .card.card-a{
+    border-radius: 15px;
+  }
+  .card.card-c{
+    border-radius: 15px;
+  }
+ 
   #testimonial-carousel .carousel-control-prev,
   #testimonial-carousel .carousel-control-next {
     width: 50px;
@@ -137,22 +154,30 @@
     /* position: relative; */
     padding: 20px;
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 15px;
     /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); */
     /* transition: box-shadow 0.3s, background-color 0.3s; */
     height: 200px;
   }
-
+  .service-item:hover h3,
+  .service-item:hover p {
+    color: white;
+  }
   .service-item:hover {
     transform: scale(1.05);
       transition: transform 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+      background-color: rgba(0, 0, 0, 0.2);
+      color: white;
+      border: 2px solid white;
+  
   }
 
 .card:hover {
       transform: scale(1.05);
       transition: transform 0.3s ease;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      /* background-color: rgba(0, 0, 0, 0.2); */
     }
 
     .details {
@@ -177,6 +202,7 @@
   .card {
     cursor: pointer;
     border: 5px solid transparent;
+  
   }
   
  
@@ -212,6 +238,7 @@
       color: #fff;
       padding: 20px;
       z-index: 1;
+      border-radius: 15px;
     }
 
     .card:hover .overlay {
@@ -258,16 +285,7 @@ body {
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
          
-            <form class="form-inline">
-              <div class="input-group">
-                  <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                  <div class="input-group-append">
-                      <button class="btn btn-outline-primary" type="submit">
-                          <i class="fa fa-search"></i>
-                      </button>
-                  </div>
-              </div>
-          </form>
+           
          
           <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
@@ -281,84 +299,28 @@ body {
               <a class="nav-link" href="#ab">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#serv">Services</a>
+                <a class="nav-link" href="#ser">Services</a>
             </li>
             <!-- <li class="nav-item">
-              <a class="nav-link" href="#ab">Sign In</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#ab">Signup</a>
+                <a class="nav-link" href="{%url 'home'%}">Logout</a>
             </li> -->
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="#" data-toggle="modal" data-target="#signInModal">Sign In</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" data-toggle="modal" data-target="#signUpModal">Sign Up</a>
-            </li> -->
+            <form class="form-inline">
+              <div class="input-group">
+                  <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                  <div class="input-group-append">
+                      <button class="btn btn-outline-primary" type="submit">
+                          <i class="fa fa-search"></i>
+                      </button>
+                  </div>
+              </div>
+          </form>
             
           </ul>
          
         </div>
       </nav>
-      <!-- Sign In Modal -->
-<!-- <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content" style="background-color: rgb(39, 39, 59);color: white;">
-      <div class="modal-header">
-        <h5 class="modal-title" id="signInModalLabel">Sign In</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       
-        <form>
-          <div class="form-group">
-            <label for="signin-email">Email</label>
-            <input type="email" class="form-control" id="signin-email" placeholder="Enter your email">
-          </div>
-          <div class="form-group">
-            <label for="signin-password">Password</label>
-            <input type="password" class="form-control" id="signin-password" placeholder="Enter your password">
-          </div>
-          <button type="submit" class="btn btn-primary">Sign In</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div> -->
+     
 
-<!-- 
-<div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content" style="background-color: rgb(39, 39, 59);color: white;">
-      <div class="modal-header">
-        <h5 class="modal-title" id="signUpModalLabel">Sign Up</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       
-        <form>
-          <div class="form-group">
-            <label for="signup-name">Name</label>
-            <input type="text" class="form-control" id="signup-name" placeholder="Enter your name">
-          </div>
-          <div class="form-group">
-            <label for="signup-email">Email</label>
-            <input type="email" class="form-control" id="signup-email" placeholder="Enter your email">
-          </div>
-          <div class="form-group">
-            <label for="signup-password">Password</label>
-            <input type="password" class="form-control" id="signup-password" placeholder="Enter your password">
-          </div>
-          <button type="submit" class="btn btn-primary">Sign Up</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div> -->
 
       <section  style="margin-top: 50px;color: white;">
       
@@ -366,56 +328,17 @@ body {
           <div class="container text-center con">
             <h1 class="text-white">Welcome to Trader Website</h1>
             <p class="text-white">Discover the amazing features we offer.</p>
-          <a href="{% url 'login'%}" style="text-decoration: none;"> <button class="btn  btn-lg" style="background-color: rgb(20, 20, 97);color: white;">Get Started</button><a>
-          </div>
+          
+            <a href="{% url 'login' %}" class="btn btn-primary btn-lg new" style="background-color: rgb(37, 37, 82);">Get Started</a>
+
+   
+         
         </div> 
         
         
       </section>
       
-      <!-- <section data-aos="fade-up">
-        <div class="container text-center" style="color: white;"><h1>Live Analytics</h1></div>
-        <div class="container d-flex justify-content-center align-items-center" style="background-color: rgba(72, 72, 255, 0.5);">
-          <div class="row"> 
-            <div class="col-md-6 mb-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Card 1</h5>
-                  <p class="card-text">Some text for card 1.</p>
-                  <a href="#" class="btn btn-primary">Button</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Card 2</h5>
-                  <p class="card-text">Some text for card 2.</p>
-                  <a href="#" class="btn btn-primary">Button</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Card 3</h5>
-                  <p class="card-text">Some text for card 3.</p>
-                  <a href="#" class="btn btn-primary">Button</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Card 4</h5>
-                  <p class="card-text">Some text for card 4.</p>
-                  <a href="#" class="btn btn-primary">Button</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
+
       
       
       
@@ -426,7 +349,7 @@ body {
         <div class="container" style="background-color: rgba(38, 38, 116, 0.5);">
           <div class="row" style="padding-top: 30px;">
             <div class="col-md-6 mb-4">
-              <div class="card">
+              <div class="card card-a">
                 <div class="card-body">
                   <h5 class="card-title">Trader 50</h5>
                   <!-- <p class="card-text">Some text for card 1.</p> -->
@@ -446,7 +369,7 @@ body {
               </div>
             </div>
             <div class="col-md-6 mb-4">
-              <div class="card">
+              <div class="card card-a">
                 <div class="card-body">
                   <h5 class="card-title">Trader Bank</h5>
                  
@@ -466,7 +389,7 @@ body {
               </div>
             </div>
             <div class="col-md-6 mb-4">
-              <div class="card">
+              <div class="card card-a">
                 <div class="card-body">
                   <h5 class="card-title">Fin Trader</h5>
                   <div class="d-flex justify-content-between align-items-center">
@@ -485,7 +408,7 @@ body {
               </div>
             </div>
             <div class="col-md-6 mb-4">
-              <div class="card">
+              <div class="card card-a">
                 <div class="card-body">
                   <h5 class="card-title">Trader Market</h5>
                   
@@ -507,21 +430,23 @@ body {
           </div>
         </div>
       </section>
-      <section style="margin-top: 80px;" data-aos="fade-up" id="serv">
+      <section style="margin-top: 80px;" data-aos="fade-up" id="ser">
         <div class="container">
           <h1 class="text-center" style="color: white;">Services</h1>
         </div>
           <div class="container-fluid" style="background-color: rgb(27, 27, 56);padding-top: 30px;">
             <div class="row">
-              <div class="col-md-4 mb-4">
-                <div class="service-item">
-                  <!-- <i class="fas fa-plane"></i> --> <a href="{%url 'stock'%}" style="text-decoration: none; color: black;">
-                  <img src="https://cdn-icons-png.flaticon.com/128/3606/3606247.png"class="image">
-                  <h3>Advanced Stock Screener
-                  </h3>
-                  <p>For your daily research after the market closes.</p>
+              
+                <div class="col-md-4 mb-4">
+                  <div class="service-item">
+                    <a href="{%url 'stock'%}" style="text-decoration: none; color: black;">
+                      <img src="https://cdn-icons-png.flaticon.com/128/3606/3606247.png" class="image">
+                      <h3>Advanced Stock Screener</h3>
+                      <p>For your daily research after the market closes.</p>
+                    </a>
+                
                 </div>
-              </div></a>
+              </div>
               <div class="col-md-4 mb-4">
                 <div class="service-item">
                   <!-- <i class="fas fa-hotel"></i> -->
@@ -818,7 +743,7 @@ body {
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <div class="card testimonial-card d-flex align-items-center">
+        <div class="card testimonial-card d-flex align-items-center text-justify">
           <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp" alt="Testimonial 1">
           <p><i class="fas fa-quote-left"></i> Integer eu quam non lorem venenatis fringilla.id scelerisque.</p>
           <p>Integer eu quam non lorem venenatis fringilla.id scelerisque.</p>
@@ -827,7 +752,7 @@ body {
         </div>
       </div>
       <div class="carousel-item">
-        <div class="card testimonial-card d-flex  align-items-center">
+        <div class="card testimonial-card d-flex  align-items-center text-justify">
           <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp" alt="Testimonial 2">
           <p><i class="fas fa-quote-left"></i> Integer eu quam non lorem venenatis fringilla.id scelerisque.</p>
           <p>Integer eu quam non lorem venenatis fringilla.id scelerisque.</p>
@@ -836,7 +761,7 @@ body {
         </div>
       </div>
       <div class="carousel-item">
-        <div class="card testimonial-card d-flex justify-content-center align-items-center">
+        <div class="card testimonial-card d-flex justify-content-center align-items-center text-justify">
           <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp" alt="Testimonial 3">
           <p><i class="fas fa-quote-left"></i> Integer eu quam non lorem venenatis fringilla.id scelerisque.</p>
           <p>Integer eu quam non lorem venenatis fringilla.id scelerisque.</p>
@@ -863,7 +788,7 @@ body {
   <div class="container">
     <div class="row">
       <div class="col-md-3">
-        <div class="card align-items-center justify-content-between d-flex text-center">
+        <div class="card align-items-center justify-content-between d-flex text-center"style="border-radius: 15px;">
           <!-- <img class="card-img-top" src="image1.jpg" alt="Card Image 1"> -->
          
           <i class="fab fa-youtube fa-4x" style="color: red;"></i>
@@ -876,7 +801,7 @@ body {
       </div>
       <div class="col-md-3">
         <!-- <div class="card"> -->
-           <div class="card align-items-center justify-content-between d-flex text-center">
+           <div class="card align-items-center justify-content-between d-flex text-center"style="border-radius: 15px;">
           <!-- <img class="card-img-top" src="image2.jpg" alt="Card Image 2"> -->
           <i class="fas fa-users fa-4x" style="color: blue;"></i>
           <div class="card-body">
@@ -886,7 +811,7 @@ body {
         </div>
       </div>
       <div class="col-md-3">
-         <div class="card align-items-center justify-content-between d-flex text-center" >
+         <div class="card align-items-center justify-content-between d-flex text-center" style="border-radius: 15px;">
         <!-- <div class="card"> -->
           <!-- <img class="card-img-top" src="image3.jpg" alt="Card Image 3"> -->
           <i class="fas fa-download fa-4x" style="color: green;"></i>
@@ -897,7 +822,7 @@ body {
         </div>
       </div>
       <div class="col-md-3">
-         <div class="card align-items-center justify-content-between d-flex text-center" >
+         <div class="card align-items-center justify-content-between d-flex text-center" style="border-radius: 15px;" >
         <!-- <div class="card"> -->
           <!-- <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" alt="Card Image 4"> -->
           <i class="fas fa-eye fa-4x" style="color: violet;"></i>
@@ -911,6 +836,9 @@ body {
     </div>
   </div>
 </section> 
+
+
+
  <section style="margin-top: 80px; background-color: rgb(11, 11, 59);" data-aos="fade-up">
   <div class="container">
     <h1 class="text-center" style="color: white;">Type Of Investments</h1>
@@ -918,8 +846,8 @@ body {
   <div class="container">
     <div class="row justify-content-center d-flex align-items-center" style="padding-bottom: 50px;">
       <div class="col-md-3">
-        <div class="card">
-          <img class="card-img-top" src="https://images.pexels.com/photos/1263324/pexels-photo-1263324.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Card Image 1">
+        <div class="card card-c">
+          <img class="card-img-top" src="https://images.pexels.com/photos/1263324/pexels-photo-1263324.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Card Image 1" style="border-radius: 15px;">
           <div class="overlay">
             <div class="shade">Commodity</div>
           
@@ -927,8 +855,8 @@ body {
         </div>
       </div>
       <div class="col-md-3">
-        <div class="card">
-          <img class="card-img-top" src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Card Image 2">
+        <div class="card card-c">
+          <img class="card-img-top" src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Card Image 2" style="border-radius: 15px;">
           <div class="overlay">
             <div class="shade">Mutual fund</div>
             
@@ -937,8 +865,8 @@ body {
         </div>
       </div>
       <div class="col-md-3">
-        <div class="card">
-          <img class="card-img-top" src="https://images.pexels.com/photos/50987/money-card-business-credit-card-50987.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Card Image 3">
+        <div class="card card-c">
+          <img class="card-img-top" src="https://images.pexels.com/photos/50987/money-card-business-credit-card-50987.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Card Image 3" style="border-radius: 15px;">
           <div class="overlay">
             <div class="shade">Bond</div>
            
@@ -946,8 +874,8 @@ body {
         </div>
       </div>
       <div class="col-md-3">
-        <div class="card"><a href="{%url 'exchange'%}">
-          <img class="card-img-top" src="https://images.pexels.com/photos/5980871/pexels-photo-5980871.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Card Image 4">
+        <div class="card card-c"><a href="{%url 'exchange'%}">
+          <img class="card-img-top" src="https://images.pexels.com/photos/5980871/pexels-photo-5980871.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Card Image 4" style="border-radius: 15px;">
           <div class="overlay">
             <div class="shade">Exchange-traded fund</div>
            
@@ -1053,12 +981,12 @@ body {
     <h1 class="text-center" style="color: white;">About Us</h1>
   </div>
   <div class="container"style="background-color: rgb(18, 18, 58);">
-    <div class="row">
+    <div class="row justify-content-center">
       <div class="col-md-6 about-us-image"style="margin-top: 30px;">
         <img src="https://images.pexels.com/photos/6770610/pexels-photo-6770610.jpeg?auto=compress&cs=tinysrgb&w=600" alt="About Us Image" class="img-fluid" style="height: 500px;">
       </div>
       
-      <div class="col-md-6" style="color: white;margin-top: 30px;">
+      <div class="col-md-6 text-justify" style="color: white;margin-top: 30px;">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pretium convallis purus, ut ultrices ligula. Fusce pulvinar risus eget dolor aliquet vestibulum. In hac habitasse platea dictumst.</p>
         <p>Nunc at dictum nunc. Nullam auctor auctor nisi, ut sagittis risus ultricies at. Integer quis aliquam metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus finibus fermentum erat, et dictum purus rhoncus sed. Vivamus vitae tincidunt dolor. Nulla lobortis justo vel quam fringilla, in lacinia lorem feugiat.</p>
         <!-- <p>Suspendisse potenti. Morbi congue purus a turpis fermentum, vitae dictum ex commodo. Mauris porttitor vestibulum odio, ut scelerisque tellus finibus sed. Curabitur congue commodo lacus, eget efficitur turpis tincidunt id. Pellentesque id ultrices est, ut pulvinar ex. Curabitur id tellus scelerisque, viverra lacus et, volutpat nisi. Nullam eu lorem non ante fringilla efficitur id et sapien. Mauris vulputate nisi ac volutpat pretium. Proin congue tincidunt hendrerit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p> -->
@@ -1069,23 +997,9 @@ body {
 
 <section style="margin-top: 80px; margin-bottom: 30px;" data-aos="fade-up" id="con">
   <div class="container" style="background-color: rgb(18, 18, 58);">
-    <h1 class="text-center" style="color: white;">Contact Us</h1>
+    <!-- <h1 class="text-center" style="color: white;">Contact Us</h1> -->
     <div class="row justify-content-center" >
-      <div class="col-md-6">
-        <div class="map" style="margin-top: 30px;">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251482.4572478722!2d76.13611769581759!3d9.98266969804492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d514abec6bf%3A0xbd582caa5844192!2sKochi%2C%20Kerala!5e0!3m2!1sen!2sin!4v1685958058997!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
-      <div class="contact-info" style="color: white; margin-top: 30px;">
-        <h3>Contact Information</h3>
-        <p><i class="fas fa-map-marker-alt"></i> Address: 123 Street, City, Country</p>
-        <p><i class="fas fa-phone"></i> Phone: +123 456 7890</p>
-        <p><i class="fas fa-envelope"></i> Email: example@example.com</p>
-        <p><i class="fab fa-twitter"></i> Twitter: <a href="https://twitter.com/example" target="_blank">@example</a></p>
-        <p><i class="fab fa-facebook"></i> Facebook: <a href="https://www.facebook.com/example" target="_blank">Example Page</a></p>
-      </div>
-    </div>
-      <div class="col-md-6 offset-md-3" style="color: white;margin-top: 30px;padding-bottom: 10px;">
+      <div class="col-md-6" style="color: white;margin-top: 30px;padding-bottom: 10px;">
         <h1 class="text-center">Send Message</h1>
         <form>
           <div class="form-group">
@@ -1100,49 +1014,50 @@ body {
             <label for="message">Message</label>
             <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Send Message</button>
+          <button type="submit" class="btn btn-primary" style="margin-top: 30px; margin-bottom: 30px;">Send Message</button>
         </form>
       </div>
     </div>
   </div>
 </section>
 
-  <footer class="footer  text-white foot">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h4>About Us</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita aperiam voluptas, perferendis soluta necessitatibus vero.</p>
-        </div>
-        <div class="col-md-3">
-          <h4>Quick Links</h4>
-          <ul class="list-unstyled">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-        <div class="col-md-3">
-          <h4>Contact Info</h4>
-          <ul class="list-unstyled">
-            <li><i class="fas fa-map-marker-alt"></i> 123 Street, City, Country</li>
-            <li><i class="fas fa-phone"></i> +1 234 567 890</li>
-            <li><i class="fas fa-envelope"></i> info@example.com</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <p>&copy; 2023 Trader. All rights reserved.</p>
+<footer class="footer  text-white foot">
+  <div class="container">
+    <div class="row">
+          <div class="col-md-6 text-justify">
+            <h4>Location</h4>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251482.4572478722!2d76.13611769581759!3d9.98266969804492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d514abec6bf%3A0xbd582caa5844192!2sKochi%2C%20Kerala!5e0!3m2!1sen!2sin!4v1685958058997!5m2!1sen!2sin" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
+      <div class="col-md-3">
+        <h4>Quick Links</h4>
+        <ul class="list-unstyled">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h4>Contact Info</h4>
+        <ul class="list-unstyled">
+          <li><i class="fas fa-map-marker-alt"></i> 123 Street, City, Country</li>
+          <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+          <li><i class="fas fa-envelope"></i> info@example.com</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom text-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-12">
+          <p>&copy; 2023 Trader. All rights reserved.</p>
         </div>
       </div>
     </div>
-  </footer>
+  </div>
+  
+</footer>
       <script>
         AOS.init();
       </script>
